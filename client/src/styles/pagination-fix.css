@@ -1,0 +1,184 @@
+/* Pagination Fix - Ensure Horizontal Layout */
+
+/* Override any conflicting Bootstrap/Tailwind styles */
+ul.pagination {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin: 24px 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Ensure page items are inline */
+ul.pagination li.page-item {
+  display: inline-flex !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  list-style: none !important;
+}
+
+/* Page link styling */
+ul.pagination li.page-item a.page-link,
+ul.pagination li.page-item button.page-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 40px !important;
+  height: 40px !important;
+  padding: 8px 12px !important;
+  margin: 0 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #64748b !important;
+  background: #ffffff !important;
+  border: 2px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  transition: all 0.15s ease-in-out !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05) !important;
+  width: auto !important;
+  float: none !important;
+  clear: none !important;
+}
+
+/* Hover effects */
+ul.pagination li.page-item a.page-link:hover,
+ul.pagination li.page-item button.page-link:hover {
+  background: #eff6ff !important;
+  border-color: #2563eb !important;
+  color: #2563eb !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1) !important;
+}
+
+/* Active page styling */
+ul.pagination li.page-item.active a.page-link,
+ul.pagination li.page-item.active button.page-link {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 15px -3px rgb(37 99 235 / 0.2) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Disabled state */
+ul.pagination li.page-item.disabled a.page-link,
+ul.pagination li.page-item.disabled button.page-link {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  transform: none !important;
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #64748b !important;
+}
+
+/* Break/ellipsis styling */
+ul.pagination li.page-item.break a.page-link,
+ul.pagination li.page-item.break button.page-link {
+  border: none !important;
+  background: transparent !important;
+  cursor: default !important;
+  pointer-events: none !important;
+  box-shadow: none !important;
+  padding: 8px 4px !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  ul.pagination {
+    gap: 4px !important;
+    margin: 16px 0 !important;
+  }
+  
+  ul.pagination li.page-item a.page-link,
+  ul.pagination li.page-item button.page-link {
+    min-width: 36px !important;
+    height: 36px !important;
+    padding: 6px 8px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  ul.pagination {
+    gap: 2px !important;
+  }
+  
+  ul.pagination li.page-item a.page-link,
+  ul.pagination li.page-item button.page-link {
+    min-width: 32px !important;
+    height: 32px !important;
+    padding: 4px 6px !important;
+    font-size: 12px !important;
+  }
+  
+  /* Hide text on very small screens, keep only arrows */
+  ul.pagination li.page-item.previous a.page-link span:not(.sr-only),
+  ul.pagination li.page-item.next a.page-link span:not(.sr-only) {
+    display: none !important;
+  }
+}
+
+/* Extra specificity for stubborn styles */
+body ul.pagination {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+body ul.pagination li {
+  display: inline-flex !important;
+  width: auto !important;
+}
+
+body ul.pagination li a,
+body ul.pagination li button {
+  width: auto !important;
+  display: inline-flex !important;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  ul.pagination li.page-item a.page-link,
+  ul.pagination li.page-item button.page-link {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  
+  ul.pagination li.page-item a.page-link:hover,
+  ul.pagination li.page-item button.page-link:hover {
+    background: #1e40af !important;
+    border-color: #3b82f6 !important;
+    color: #ffffff !important;
+  }
+}
+
+/* Loading state for pagination */
+.pagination-loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.pagination-loading ul.pagination li.page-item a.page-link,
+.pagination-loading ul.pagination li.page-item button.page-link {
+  cursor: wait !important;
+}
+
+/* Focus styles for accessibility */
+ul.pagination li.page-item a.page-link:focus,
+ul.pagination li.page-item button.page-link:focus {
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: 2px !important;
+  z-index: 10 !important;
+}
