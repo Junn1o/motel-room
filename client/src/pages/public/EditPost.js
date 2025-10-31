@@ -3,6 +3,7 @@ import { detailPost, getCategoryData } from '../../api/api.js';
 import Select from "react-select";
 import axios from "axios";
 import notfound from '../../assets/images/not_found.png'
+import { image } from "../../api/URL.js";
 const EditPost = ({ data, toggleForm }) => {
     //const [formData, setFormData] = useState(data);
     const [categoryOptions, setCategoryOptions] = useState([]);
@@ -27,7 +28,7 @@ const EditPost = ({ data, toggleForm }) => {
                 },
             };
             const response = await axios.put(
-                `https://localhost:7139/api/Post/delete-image?id=${data.id}`,
+                `${API_BASE_URL}/Post/delete-image?id=${data.id}`,
                 { actualFile: imagetoDelete }, config
             );
         }
@@ -75,7 +76,7 @@ const EditPost = ({ data, toggleForm }) => {
             },
         };
         const response = await axios.put(
-            `https://localhost:7139/api/Post/update-post-by-id?id=${data.id}`,
+            `${API_BASE_URL}/Post/update-post-by-id?id=${data.id}`,
             formDataObject, config
         );
         const formDataObjectAsObject = {};
@@ -297,7 +298,7 @@ const EditPost = ({ data, toggleForm }) => {
                                                     <div className="w-[80px] h-[60px] border border-gray-300">
                                                         {data.actualFile ? (
                                                             <img
-                                                                src={`https://localhost:7139/${imageUrl}`}
+                                                                src={`${image}/${imageUrl}`}
                                                                 className="w-full h-full object-cover"
                                                                 alt={`${index + 1}`}
                                                             />

@@ -12,7 +12,7 @@ const Login = () => {
     const [password,setPassword] = useState("");
     const [Loading, setLoading] = useState(false);
     const loginapi = (phone,password) => {  
-        return axios.post('https://localhost:7139/api/Login',{phone,password});
+      return axios.post(`${API_BASE_URL}/Login`,{phone,password});
     }
     const {loginContext} = useContext(UserContext);
     const handleLogin = async () => {

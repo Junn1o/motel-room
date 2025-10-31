@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import {path} from '../../ultils/constants'
 import { UserContext } from '../../context/UserContext';
 import { useContext } from 'react';
+import { image } from '../../api/URL';
 const InfoUser = () => {
   const navigate = useNavigate();
   const goEdit = useCallback(() => {
@@ -23,7 +24,7 @@ const InfoUser = () => {
   const userData = {
     accountBalance: '$500.00'
   };
-  const Url = "https://localhost:7139"
+  const Url = `${image}`;
   const {loginContext,user} = useContext(UserContext);
   return (
     <div className='w-[300px] h-screen min-h-[1000px]'>

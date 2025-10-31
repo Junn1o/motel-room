@@ -48,7 +48,7 @@ const Register = () => {
         formDataToSend.append(key, formData[key]);
       }
 
-      const response = await axios.post('https://localhost:7139/api/User/add-user', formDataToSend);
+      const response = await axios.post(`${API_BASE_URL}/User/add-user`, formDataToSend);
 
       if (response.status === 200) {
         toast.success('Đăng kí thành công!');
