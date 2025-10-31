@@ -3,6 +3,7 @@ import { Button, InputForm } from "../../components";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
+import { API_BASE_URL } from '../../api/URL.js';
 const Register = () => {
   const [formData, setFormData] = useState({
     firstname: '',
@@ -48,7 +49,7 @@ const Register = () => {
         formDataToSend.append(key, formData[key]);
       }
 
-      const response = await axios.post('https://localhost:7139/api/User/add-user', formDataToSend);
+      const response = await axios.post(`${API_BASE_URL}/User/add-user`, formDataToSend);
 
       if (response.status === 200) {
         toast.success('Đăng kí thành công!');

@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import EditPost from "./EditPost.js";
 import ConfirmationModal from '../../components/ConfirmationModal'
 import { Link } from "react-router-dom";
+import { image } from "../../api/URL.js";
 function TruncatedText({ text, maxLength }) {
   if (text.length <= maxLength) {
     return (
@@ -87,7 +88,7 @@ const NewsManager = () => {
     if (actualFile && typeof actualFile === 'string') {
       // Xử lý actualFile để đảm bảo định dạng đúng
       const cleanedUrl = actualFile.split(';')[0];
-      return `https://localhost:7139/${cleanedUrl}`;
+      return `${image}/${cleanedUrl}`;
     } else {
       // Handle the case where actualFile is null or not a string
       console.error("Invalid actualFile:", actualFile);

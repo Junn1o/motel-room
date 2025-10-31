@@ -60,7 +60,7 @@ export const getPostbyId = (id) => {
     `${API_BASE_URL}/Post/Get-post-by-id?id=${id}`
   );
 }
-const apiUrl = 'https://localhost:7139/api/User/get-user-with-id';
+const apiUrl = `${API_BASE_URL}/User/get-user-with-id`;
 const getUserData = async () => {
   const userId = localStorage.getItem('userid');
   if (userId) {
@@ -80,7 +80,7 @@ const getUserData = async () => {
 export const updateUser = async (userId, formDataObject, config) => {
   try {
     const response = await axios.put(
-      `https://localhost:7139/api/User/update-customer?id=${userId}`,
+      `${API_BASE_URL}/User/update-customer?id=${userId}`,
       formDataObject,
       config
     );
@@ -109,7 +109,7 @@ export const PostRoom = (id, {title, description, address, price, area, status, 
   });
 }
 export const getCategoryData = () => {
-  return axios.get('https://localhost:7139/api/Category/get-all-category');
+  return axios.get(`${API_BASE_URL}/Category/get-all-category`);
 }
 export const detailUser = (userId) => {
   return axios.get(`${API_BASE_URL}/User/get-user-with-id?id=${userId}`)

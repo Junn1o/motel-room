@@ -99,7 +99,7 @@ const PostNew = () => {
                 },
             };
             const response = await axios.post(
-                'https://localhost:7139/api/Post/add-post',
+                `${API_BASE_URL}/Post/add-post`,
                 formDataObject, config
             );
             if (response.status === 200) {

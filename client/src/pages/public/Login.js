@@ -6,13 +6,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
 import { ToastContainer } from 'react-toastify';
+import { API_BASE_URL } from '../../api/URL.js';
 const Login = () => {
   const navigate = useNavigate();
     const [phone, setPhone] = useState("");
     const [password,setPassword] = useState("");
     const [Loading, setLoading] = useState(false);
     const loginapi = (phone,password) => {  
-        return axios.post('https://localhost:7139/api/Login',{phone,password});
+      return axios.post(`${API_BASE_URL}/Login`,{phone,password});
     }
     const {loginContext} = useContext(UserContext);
     const handleLogin = async () => {
