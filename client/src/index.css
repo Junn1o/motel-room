@@ -27,6 +27,118 @@
   margin-bottom: var(--space-6);
 }
 
+/* PAGINATION FIX - Make horizontal instead of vertical */
+.pagination {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: var(--space-2) !important;
+  margin: var(--space-6) 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.pagination .page-item {
+  display: inline-flex !important;
+  margin: 0 !important;
+}
+
+.pagination .page-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 40px !important;
+  height: 40px !important;
+  padding: var(--space-2) var(--space-3) !important;
+  margin: 0 !important;
+  font-size: var(--text-sm) !important;
+  font-weight: var(--font-medium) !important;
+  color: var(--text-secondary) !important;
+  background: var(--bg-primary) !important;
+  border: 2px solid var(--border-light) !important;
+  border-radius: var(--radius-lg) !important;
+  text-decoration: none !important;
+  transition: all var(--transition-fast) !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.pagination .page-link:hover {
+  background: var(--primary-50) !important;
+  border-color: var(--primary-500) !important;
+  color: var(--primary-600) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.pagination .page-item.active .page-link {
+  background: var(--primary-500) !important;
+  border-color: var(--primary-500) !important;
+  color: var(--text-inverse) !important;
+  box-shadow: var(--shadow-colored) !important;
+  transform: translateY(-1px) !important;
+}
+
+.pagination .page-item.disabled .page-link {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  transform: none !important;
+}
+
+.pagination .page-item.disabled .page-link:hover {
+  background: var(--bg-primary) !important;
+  border-color: var(--border-light) !important;
+  color: var(--text-secondary) !important;
+  transform: none !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+/* Previous/Next button styling */
+.pagination .page-link[aria-label*="Previous"],
+.pagination .page-link[aria-label*="Next"] {
+  padding: var(--space-2) var(--space-4) !important;
+  font-size: var(--text-sm) !important;
+}
+
+/* Break/ellipsis styling */
+.pagination .page-item .page-link[aria-label="..."] {
+  border: none !important;
+  background: transparent !important;
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+/* Responsive pagination for mobile */
+@media (max-width: 768px) {
+  .pagination {
+    gap: var(--space-1) !important;
+  }
+  
+  .pagination .page-link {
+    min-width: 36px !important;
+    height: 36px !important;
+    padding: var(--space-1) var(--space-2) !important;
+    font-size: var(--text-xs) !important;
+  }
+  
+  /* Hide text on mobile, keep only icons/numbers */
+  .pagination .page-link[aria-label*="Previous"]:before {
+    content: '‹';
+  }
+  
+  .pagination .page-link[aria-label*="Next"]:before {
+    content: '›';
+  }
+  
+  .pagination .page-link[aria-label*="Previous"] span,
+  .pagination .page-link[aria-label*="Next"] span {
+    display: none;
+  }
+}
+
 /* Modern Navigation Enhancements */
 .navbar {
   background: var(--bg-primary) !important;
@@ -268,43 +380,6 @@
   background: rgba(37, 99, 235, 0.1) !important;
   color: var(--primary-700) !important;
   border-left: 4px solid var(--primary-500) !important;
-}
-
-/* Modern Pagination */
-.pagination {
-  gap: var(--space-2);
-}
-
-.page-link {
-  border: 2px solid var(--border-light) !important;
-  border-radius: var(--radius-lg) !important;
-  color: var(--text-secondary) !important;
-  background: var(--bg-primary) !important;
-  padding: var(--space-2) var(--space-4) !important;
-  margin: 0 !important;
-  transition: all var(--transition-fast) !important;
-  font-weight: var(--font-medium) !important;
-  box-shadow: var(--shadow-sm) !important;
-}
-
-.page-link:hover {
-  background: var(--primary-50) !important;
-  border-color: var(--primary-500) !important;
-  color: var(--primary-600) !important;
-  transform: translateY(-1px) !important;
-  box-shadow: var(--shadow) !important;
-}
-
-.page-item.active .page-link {
-  background: var(--primary-500) !important;
-  border-color: var(--primary-500) !important;
-  color: var(--text-inverse) !important;
-  box-shadow: var(--shadow-colored) !important;
-}
-
-.page-item.disabled .page-link {
-  opacity: 0.5 !important;
-  pointer-events: none !important;
 }
 
 /* Enhanced Dropdown */
