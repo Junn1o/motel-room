@@ -1,5 +1,6 @@
 /* Import Modern Design System */
 @import './styles/modern-design.css';
+@import './styles/pagination-fix.css';
 
 /* Tailwind CSS */
 @tailwind base;
@@ -27,7 +28,7 @@
   margin-bottom: var(--space-6);
 }
 
-/* PAGINATION FIX - Make horizontal instead of vertical */
+/* ADDITIONAL PAGINATION OVERRIDES - Highest Priority */
 .pagination {
   display: flex !important;
   align-items: center !important;
@@ -37,11 +38,18 @@
   margin: var(--space-6) 0 !important;
   padding: 0 !important;
   list-style: none !important;
+  flex-direction: row !important;
+}
+
+.pagination > * {
+  display: inline-flex !important;
+  margin: 0 !important;
 }
 
 .pagination .page-item {
   display: inline-flex !important;
   margin: 0 !important;
+  width: auto !important;
 }
 
 .pagination .page-link {
@@ -63,6 +71,10 @@
   cursor: pointer !important;
   white-space: nowrap !important;
   box-shadow: var(--shadow-sm) !important;
+  width: auto !important;
+  float: none !important;
+  clear: none !important;
+  position: relative !important;
 }
 
 .pagination .page-link:hover {
@@ -94,49 +106,6 @@
   color: var(--text-secondary) !important;
   transform: none !important;
   box-shadow: var(--shadow-sm) !important;
-}
-
-/* Previous/Next button styling */
-.pagination .page-link[aria-label*="Previous"],
-.pagination .page-link[aria-label*="Next"] {
-  padding: var(--space-2) var(--space-4) !important;
-  font-size: var(--text-sm) !important;
-}
-
-/* Break/ellipsis styling */
-.pagination .page-item .page-link[aria-label="..."] {
-  border: none !important;
-  background: transparent !important;
-  cursor: default !important;
-  pointer-events: none !important;
-}
-
-/* Responsive pagination for mobile */
-@media (max-width: 768px) {
-  .pagination {
-    gap: var(--space-1) !important;
-  }
-  
-  .pagination .page-link {
-    min-width: 36px !important;
-    height: 36px !important;
-    padding: var(--space-1) var(--space-2) !important;
-    font-size: var(--text-xs) !important;
-  }
-  
-  /* Hide text on mobile, keep only icons/numbers */
-  .pagination .page-link[aria-label*="Previous"]:before {
-    content: '‹';
-  }
-  
-  .pagination .page-link[aria-label*="Next"]:before {
-    content: '›';
-  }
-  
-  .pagination .page-link[aria-label*="Previous"] span,
-  .pagination .page-link[aria-label*="Next"] span {
-    display: none;
-  }
 }
 
 /* Modern Navigation Enhancements */
@@ -552,6 +521,46 @@
   animation: slideInUp 0.3s ease-out;
 }
 
+/* Utility Classes for Flex Layout */
+.d-flex {
+  display: flex !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.gap-2 {
+  gap: var(--space-2) !important;
+}
+
+.gap-3 {
+  gap: var(--space-3) !important;
+}
+
+/* Line Clamp Utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* Mobile Optimizations */
 @media (max-width: 768px) {
   .container {
@@ -573,5 +582,17 @@
   
   .navbar-brand {
     font-size: var(--text-lg) !important;
+  }
+  
+  /* Mobile pagination adjustments */
+  .pagination {
+    gap: var(--space-1) !important;
+  }
+  
+  .pagination .page-link {
+    min-width: 36px !important;
+    height: 36px !important;
+    padding: var(--space-1) var(--space-2) !important;
+    font-size: var(--text-xs) !important;
   }
 }
