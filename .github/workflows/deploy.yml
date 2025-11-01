@@ -34,7 +34,14 @@ jobs:
         docker rm motel-client || true
         
     - name: Build Docker image
-      run: docker build -t react-app:latest .
+      env:
+        REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+        REACT_APP_API: ${{ secrets.REACT_APP_API }}
+      run: |
+        docker build \
+          --build-arg REACT_APP_API_URL="$REACT_APP_API_URL" \
+          --build-arg REACT_APP_API="$REACT_APP_API" \
+          -t react-app:latest .
       
     - name: Run new container
       run: |
