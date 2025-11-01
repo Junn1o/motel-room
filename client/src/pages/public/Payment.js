@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import momo from '../../assets/images/logo_MoMo.png';
-import visa from '../../assets/images/Visa.png';
-import MasterCard from '../../assets/images/mastercard.png';
 import QR from '../../assets/images/QR.png';
 import QRPay from '../../assets/images/QRPay.jpg';
-import bank from '../../assets/images/bank.png';
 
 const Payment = () => {
   const [showQR, setShowQR] = useState(false);

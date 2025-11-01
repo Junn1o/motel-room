@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { detailPost, getCategoryData } from '../../api/api.js';
+import { getCategoryData } from '../../api/api.js';
 import Select from "react-select";
 import axios from "axios";
 import notfound from '../../assets/images/not_found.png'
-import { image } from "../../api/URL.js";
+import { image, API_BASE_URL } from "../../api/URL.js";
 const EditPost = ({ data, toggleForm }) => {
     //const [formData, setFormData] = useState(data);
     const [categoryOptions, setCategoryOptions] = useState([]);

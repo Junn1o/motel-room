@@ -1,9 +1,9 @@
 import React,{useCallback, useState, useEffect} from "react";
 import anhtro from "../../assets/images/nhanobita.jpg";
 import icons from "../../ultils/icons";
-import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {path} from '../../ultils/constants';
-import { TiemKiemGia, SanPham,TinMoi,SanPham1,Button} from "../../components";
+import { TiemKiemGia, SanPham,TinMoi,SanPham1} from "../../components";
 import Pagination from '../../components/Pagination';
 import { getPost } from "../../api/api";
 const { BsChevronRight } = icons;

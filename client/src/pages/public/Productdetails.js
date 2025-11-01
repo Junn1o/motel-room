@@ -1,15 +1,11 @@
 import React, {useEffect, useState,useCallback} from 'react'
-import { Slide } from 'react-slideshow-image';
 import { useParams } from 'react-router-dom';
-import notfound from '../../assets/images/not_found.png'
 import icons from "../../ultils/icons";
 import '../../assets/css/slider.css'
 import { TiemKiemGia,TinMoi ,SanPham1} from "../../components";
 import { detailPost } from '../../api/api';
 import { image } from '../../api/URL';
 import { useNavigate } from "react-router-dom";
-import moment from 'moment';
-import {path} from '../../ultils/constants';
 const { BsChevronRight } = icons;
 const Productdetails = () => {
   const { id } = useParams();

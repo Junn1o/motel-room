@@ -1,0 +1,21 @@
+module.exports = {
+    extends: [
+        'react-app',
+        'react-app/jest'
+    ],
+    plugins: ['unused-imports'],
+    rules: {
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'off',
+        'unused-imports/no-unused-imports': 'warn',
+        'unused-imports/no-unused-vars': [
+            'warn',
+            {
+                'vars': 'all',
+                'varsIgnorePattern': '^_',
+                'args': 'after-used',
+                'argsIgnorePattern': '^_'
+            }
+        ]
+    }
+};

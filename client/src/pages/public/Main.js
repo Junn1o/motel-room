@@ -4,7 +4,7 @@ import anhtro from "../../assets/images/nhanobita.jpg";
 import icons from "../../ultils/icons";
 import { useNavigate } from "react-router-dom";
 import {path} from '../../ultils/constants';
-import { TiemKiemGia, SanPham,TinMoi,SanPham1,Button} from "../../components";
+import { TiemKiemGia, SanPham,TinMoi,SanPham1} from "../../components";
 import Pagination from '../../components/Pagination'
 
 const { BsChevronRight } = icons;
