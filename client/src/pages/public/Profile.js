@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react'
-import avatar from '../../assets/images/avatar.jpg';
 import UserForm from '../../components/UserForm';
 import { detailUser, updateUser } from '../../api/api';
 import { toast } from 'react-toastify';

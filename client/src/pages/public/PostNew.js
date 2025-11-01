@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { getCategoryData } from "../../api/api";
 import Select from "react-select";
+import { API_BASE_URL } from "../../api/URL";
 const PostNew = () => {
     const Phone = "0797878315";
     const [Loading, setLoading] = useState(false);
