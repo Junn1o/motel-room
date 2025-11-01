@@ -1,6 +1,6 @@
 import { Routes, Route,useLocation } from 'react-router-dom';
-import { Login, Main, Home,Productdetails,Register,Post,PostNew,NewsManager,ProFile,Payment, MainSort} from '../../client/src/pages/public';
-import { path } from '../../client/src/ultils/constants';
+import { Login, Main, Home, Productdetails, Register, Post, PostNew, NewsManager, ProFile, Payment, MainSort } from '../src/pages/public';
+import { path } from '../src/ultils/constants';
 import { ToastContainer } from 'react-toastify';
 import { useContext,useEffect } from 'react';
 import { UserContext } from './context/UserContext';
