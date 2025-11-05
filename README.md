@@ -1,6 +1,6 @@
 # Motel Room - Customer Portal
 
-A modern, responsive customer-facing website for motel room browsing and services. Built with ReactJS, this application provides customers with an intuitive interface to browse rooms, and contact the host.
+A modern, responsive customer-facing website for motel room browsing and services. Built with React.js, this application provides customers with an intuitive interface to browse rooms, and contact the host.
 
 ## 🌟 Features
 
@@ -35,21 +35,18 @@ Before running this application, ensure you have:
    ```
 
 3. **Configure environment settings**
-   Update the API endpoint in your configuration file:
+   Create a `.env` file in the root directory:
    ```bash
    REACT_APP_API_URL="yourapiurl"
    REACT_APP_API="yourapiurl"
    ```
 
-4. **Serve the application**
-   
-   For development:
+5. **Serve the application**
    ```bash
-   # Using Node.js serve to run
    npm start
    ```
    
-5. **Or using Docker (Recommended)**
+6. **Or using Docker (Recommended)**
    ```bash
    # Build and run with Docker
    docker build -t motel-room .
@@ -65,7 +62,8 @@ This customer portal works with:
 
 ## 🛠️ Technology Stack
 
-- **Frontend**: ReactJS
-- **Styling**: CSS, MUI, Tailwind
-- **Storage**: LocalStorage
+- **Frontend**: React.js
+- **UI Library**: Material-UI (MUI)
+- **Styling**: Tailwind CSS
+- **HTTP Client**: fetch
 - **Deployment**: Docker containerization, Cloudflared tunnel port expose
